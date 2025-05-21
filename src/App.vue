@@ -119,7 +119,7 @@ const moveBackward = () => {
 
     <button class="mode-btn" @click="isEdited = !isEdited">{{ isEdited ? '👁' : '✎' }}</button>
 
-    <div class="move-btn" style="margin-left: 18px">
+    <div v-if="isEdited" class="move-btn" style="margin-left: 18px">
       <button
         :disabled="currentItemIndex >= historyChanges.getCurrentLength()-1"
         @click="moveBackward">&#8630;
